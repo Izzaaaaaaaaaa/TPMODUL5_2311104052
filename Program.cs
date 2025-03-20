@@ -1,18 +1,25 @@
-﻿class HaloGeneric
+﻿
+class DataGeneric<T>
 {
-    public static void SapaUser<T>(T user)
+    private T data;
+
+    public DataGeneric(T data)
     {
-        Console.WriteLine($"Halo user {user}");
+        this.data = data;
+    }
+    public void PrintData()
+    {
+        Console.WriteLine($"Data yang tersimpan adalah: {data}");
     }
 }
-
 class Program
 {
    
     static void Main(string[] args)
     {
-        // Memanggil method generic
-        HaloGeneric.SapaUser("Iza");
+        //Menggunakan class generic
+        DataGeneric<string> dataGeneric = new DataGeneric<string>("2311104052");
+        dataGeneric.PrintData();
 
     }
 }
